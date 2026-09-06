@@ -1,7 +1,7 @@
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+﻿<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name">xxTR Manager</string>
 
-    <string name="checking_info">Checking info…</string>
+    <string name="checking_info">Checking infoâ€¦</string>
     <string name="checking_root">Checking root access</string>
     <string name="searching_busybox">Searching for busybox</string>
     <string name="collecting_info">Collecting info</string>
@@ -62,12 +62,12 @@
 
     <!-- Units -->
     <string name="mhz">MHz</string>
-    <string name="celsius">ºC</string>
-    <string name="fahrenheit">ºF</string>
+    <string name="celsius">ÂºC</string>
+    <string name="fahrenheit">ÂºF</string>
     <string name="mb">MB</string>
     <string name="ms">ms</string>
     <string name="mv">mV</string>
-    <string name="uv">µV</string>
+    <string name="uv">ÂµV</string>
     <string name="min">min</string>
     <string name="mah">mAh</string>
     <string name="ma">mA</string>
@@ -242,7 +242,7 @@
     <string name="touch_boost_summary">This will boost your minimum CPU speed if you touch the screen or press a button.</string>
     <string name="fingerprint_boost">Fingerprint Boost</string>
     <string name="fingerprint_boost_summary">This will boost your minimum CPU speed if you touch the fingerprint (HOME) button.</string>
-    <string name="big_cores_max_title">Allow 4 Cores to máx freq.</string>
+    <string name="big_cores_max_title">Allow 4 Cores to mÃ¡x freq.</string>
     <string name="big_cores_max_summary">Allows the 4 BIG Cores to go to the maximum frequency, increases the performance, but will consume more battery.</string>
     <string name="iib_enabled">CPU Input Boost</string>
     <string name="iib_duration_ms">CPU Input Boost Duration ms</string>
@@ -608,7 +608,7 @@
     <string name="gpu_throttling">GPU Thermal Control</string>
     <string name="gpu_throttling_summary">In this section can control GPU temperature throttle mechanism at your OWN RISK!</string>
     <string name="gpu_tmu">GPU Thermal Manager</string>
-    <string name="gpu_tmu_summary">Your own risk to disable…</string>
+    <string name="gpu_tmu_summary">Your own risk to disableâ€¦</string>
     <string name="gpu_throttling1">GPU LEVEL 1 Throttling Freq</string>
     <string name="gpu_throttling1_summary">Exynos TMU control decrease GPU freq from max DVFS step to this freq for GPU temp - 1st step</string>
     <string name="gpu_throttling2">GPU LEVEL 2 Throttling Freq</string>
@@ -1146,7 +1146,7 @@
     <string name="adb_secure_off">Insecure ADB</string>
     <string name="debug_on">Debuggable</string>
     <string name="debug_off">Not Debuggable</string>
-    <string name="restart_usb_toast">Restarting USB…</string>
+    <string name="restart_usb_toast">Restarting USBâ€¦</string>
     <string name="selinux">SELinux State</string>
     <string name="selinux_no_kernel_toast">SELinux state: Kernel not supported</string>
     <string name="selinux_summary">Select the SELinux state, Permissive/Enforcing.\n(Required a kernel with support.)</string>
@@ -1574,4 +1574,29 @@
     <string name="running_games">games are running</string>
     <string name="force_enabled">Force Enabled</string>
     <string name="error">An error occurred while setting up</string>
+    <!-- Eureka Kernel R24U: ASV margin (Exynos7885 ACPM) -->
+    <string name="asv_margin_title">ASV Voltage Margin</string>
+    <string name="asv_margin_info">Runtime voltage margin applied by the ACPM firmware to every voltage of a DVFS domain. Positive values add stability margin; negative values undervolt (at your own risk); 0 restores the stock ECT/ASV table. Changes apply immediately to new frequency transitions.</string>
+    <string name="asv_margin_card">ASV Margins</string>
+    <string name="asv_margin_summary">Margin in millivolts (0 = stock)</string>
+    <string name="asv_margin_not_supported">ASV margin requires Eureka Kernel R24U v1.2+ (kernel exposes /sys/class/asv_margin)</string>
+    <string name="asv_domain_big">CPU BIG Cluster</string>
+    <string name="asv_domain_little">CPU LITTLE Cluster</string>
+    <string name="asv_domain_g3d">GPU (G3D)</string>
+    <string name="asv_domain_mif">Memory Bus (MIF)</string>
+    <string name="asv_domain_int">Internal Bus (INT)</string>
+    <!-- Eureka Kernel R24U: baseband guard (Shannon CP recovery) -->
+    <string name="baseband_guard_title">Baseband Guard</string>
+    <string name="baseband_guard_info">Monitors the Shannon modem (CP) state machine. If the baseband crashes and does not return ONLINE within the boot window, the guard replays the RIL recovery sequence (modem off -> on -> boot). Rate-limited; optionally reboots the device if the CP stays dead.</string>
+    <string name="baseband_guard_not_supported">Baseband guard requires Eureka Kernel R24U v1.2+ (kernel exposes /sys/class/baseband_guard)</string>
+    <string name="baseband_guard_status">Modem Status</string>
+    <string name="baseband_guard_cp_state">CP State</string>
+    <string name="baseband_guard_crashes">Crash events</string>
+    <string name="baseband_guard_recoveries">Guard recoveries</string>
+    <string name="baseband_guard_last_event">Last event</string>
+    <string name="baseband_guard_policy">Recovery Policy</string>
+    <string name="baseband_guard_enable">Enable guard</string>
+    <string name="baseband_guard_enable_summary">Automatically recover the baseband when it crashes and RIL fails to bring it back</string>
+    <string name="baseband_guard_reboot">Reboot if CP stays dead</string>
+    <string name="baseband_guard_reboot_summary">Warm reboot after the CP fails all recovery attempts (off by default)</string>
 </resources>

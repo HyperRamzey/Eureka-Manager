@@ -61,6 +61,8 @@ import com.xxmustafacooTR.kernelmanager.fragments.kernel.BusCamFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.BusDispFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.BusIntFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.BusMifFragment;
+import com.xxmustafacooTR.kernelmanager.fragments.kernel.AsvMarginFragment;
+import com.xxmustafacooTR.kernelmanager.fragments.kernel.BasebandGuardFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.CPUVoltageCl1Fragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.CPUFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.CPUHotplugFragment;
@@ -108,6 +110,8 @@ import com.xxmustafacooTR.kernelmanager.utils.kernel.bus.VoltageCam;
 import com.xxmustafacooTR.kernelmanager.utils.kernel.bus.VoltageDisp;
 import com.xxmustafacooTR.kernelmanager.utils.kernel.bus.VoltageInt;
 import com.xxmustafacooTR.kernelmanager.utils.kernel.bus.VoltageMif;
+import com.xxmustafacooTR.kernelmanager.utils.kernel.asvmargin.AsvMargin;
+import com.xxmustafacooTR.kernelmanager.utils.kernel.basebandguard.BasebandGuard;
 import com.xxmustafacooTR.kernelmanager.utils.kernel.cpuhotplug.Hotplug;
 import com.xxmustafacooTR.kernelmanager.utils.kernel.cpuvoltage.VoltageCl0;
 import com.xxmustafacooTR.kernelmanager.utils.kernel.cpuvoltage.VoltageCl1;
@@ -349,6 +353,12 @@ public class NavigationActivity extends BaseActivity
         }
         if (VoltageCam.supported()) {
             mFragments.add(new NavigationActivity.NavigationFragment(R.string.busCam_voltage, BusCamFragment.class, R.drawable.ic_bolt));
+        }
+        if (AsvMargin.supported()) {
+            mFragments.add(new NavigationActivity.NavigationFragment(R.string.asv_margin_title, AsvMarginFragment.class, R.drawable.ic_bolt));
+        }
+        if (BasebandGuard.supported()) {
+            mFragments.add(new NavigationActivity.NavigationFragment(R.string.baseband_guard_title, BasebandGuardFragment.class, R.drawable.ic_bolt));
         }
         mFragments.add(new NavigationActivity.NavigationFragment(R.string.tools));
         //mFragments.add(new NavigationActivity.NavigationFragment(R.string.data_sharing, DataSharingFragment.class, R.drawable.ic_database));

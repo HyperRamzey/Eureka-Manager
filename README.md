@@ -1,75 +1,52 @@
-# xxTR Manager
+# Eureka Manager
 
-It is a fork of ThunderTweaks [ThunderTweaks](https://github.com/ThunderStorms21th/ThunderTweaks), hKTweaks [hKTweaks](https://github.com/corsicanu/hKtweaks) and MoroGoku's [MTweaks](https://github.com/morogoku/MTweaks-KernelAdiutorMOD), properly adaptated to exynos7870/7880/7884/7885/7904/8890 devices (maybe even more).
-Original hKTweaks and MTweaks app is a Mod of Grarak's [KernelAdiutor](https://github.com/Grarak/KernelAdiutor) for compatibilize to Samsung Exynos.
-Thanks to Willi Ye for this great application.
-First version of xxTR Manager is builded from ThunderTweaks, hKTweaks and MTWeaks.
-This app works with only Exynos 9810 devices, if you don't have that device use other managers.
+Kernel manager for [Eureka-Kernel-R24U](https://github.com/HyperRamzey/Eureka-Kernel-R24U)
+(Exynos7885: Galaxy A10/A20/A20e/A30/A30s/A40/M20/M30s) — with the kernel
+features the R24U release actually ships:
 
-## Donation link for Nalas (Original creator of ThunderTweaks)
-[![PayPal](https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png)](https://paypal.me/pnalas)
+- **ASV Voltage Margin** — runtime per-domain voltage margins (BIG/LITTLE/GPU/
+  MIF/INT) via the kernel's `asv_margin` sysfs class (ACPM `MARGIN_REQ`).
+  0 = stock ECT table; positive = stability margin; negative = undervolt.
+- **Baseband Guard** — Shannon CP (modem) crash monitor + auto-recovery
+  policy: status counters (crashes/recoveries/last event), enable switch,
+  opt-in reboot-on-dead.
+- All the inherited KernelAdiutor-family tools (CPU/GPU/bus voltages,
+  governors, hotplug, wake, spectrum, misc).
 
-## Donation link for Corsicanu (Original creator of hKTweaks)
-[![PayPal](https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png)](https://paypal.me/corsicanu)
+## Lineage (GPL-3.0 combined fork)
 
-## Donation link for Morogoku (Original creator of MTweaks)
-[![PayPal](https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png)](https://paypal.me/morogoku)
+This project is a continuation of the KernelAdiutor family tree, per the
+GPL-3.0 rights each ancestor granted:
 
+| Ancestor | Contribution |
+| --- | --- |
+| [KernelAdiutor](https://github.com/Grarak/KernelAdiutor) (Willi Ye) | the original app skeleton |
+| [MTweaks-KernelAdiutorMOD](https://github.com/morogoku/MTweaks-KernelAdiutorMOD) (morogoku) | Samsung/OneUI groundwork, voltage fragments |
+| [ThunderTweaks](https://github.com/ThunderStorms21th/ThunderTweaks) (ThunderStorms21th) | Exynos focus, game/battery fragments |
+| [hKtweaks](https://github.com/corsicanu/hKtweaks) (corsicanu) | Exynos9810-era devfreq/bus voltage UI |
+| [KernelManager](https://github.com/xxmustafacooTR/KernelManager) (xxmustafacooTR) | direct base of this fork — newest gradle tree of the family |
+| EKManager v2 (EurekaTeam) | Exynos7885 paths + OneUI design (reference: jadx decompile of v2.0.0) |
 
-## Credits
-* Willi Ye, author of [KernelAdiutor](https://github.com/Grarak/KernelAdiutor)
+The fork base is xxmustafacooTR/KernelManager @ `2071149` (its repo has
+forking disabled; source is carried forward here under GPL-3.0 with this
+attribution block, preserving all original headers and LICENSE).
 
-Following libraries were used:
+## What this fork adds
 
-* Google: [v4 Support Library](https://developer.android.com/topic/libraries/support-library/features.html#v4)
-* Google: [v7 appcompat library](https://developer.android.com/topic/libraries/support-library/features.html#v7)
-* Google: [v7 cardview library](https://developer.android.com/topic/libraries/support-library/features.html#v7)
-* Google: [Design Support Library](https://developer.android.com/topic/libraries/support-library/features.html#design)
-* Google: [v7 recyclerview library](https://developer.android.com/topic/libraries/support-library/features.html#v7)
-* Ozodrukh: [CircularReveal](https://github.com/ozodrukh/CircularReveal)
-* Akexorcist: [RoundCornerProgressBar](https://github.com/akexorcist/Android-RoundCornerProgressBar)
-* Javier Santos: [AppUpdater](https://github.com/javiersantos/AppUpdater)
-* Roman Nurik: [dashclock](https://github.com/romannurik/dashclock)
-* Google: [Firebase](https://firebase.google.com)
-* Matthew Precious: [swirl](https://github.com/mattprecious/swirl)
-* Lopez Mikhael: [CircularImageView](https://github.com/lopspower/CircularImageView)
-* Square: [picasso](https://github.com/square/picasso)
-* CyanogenMod: [CyanogenMod Platform SDK](https://github.com/CyanogenMod/cm_platform_sdk)
+- `AsvMargin`/`AsvMarginFragment` — `/sys/class/asv_margin/<domain>/margin`
+  (kernel driver: `drivers/soc/samsung/cal-if/asv_margin.c`)
+- `BasebandGuard`/`BasebandGuardFragment` — `/sys/class/baseband_guard/`
+  (kernel driver: `drivers/misc/modem_v1/baseband_guard.c`)
+- Both fragments register in NavigationActivity only when their sysfs
+  surface exists (`.supported()` checks), so the APK also works on other
+  kernels of the family without the Eureka features.
 
-Also codes from different people:
+## Build
 
-#### Andrei F.
-
-* [RootUtils](https://github.com/Grarak/KernelAdiutor/blob/master/app/src/main/java/com/grarak/kerneladiutor/utils/root/RootUtils.java)
-
-#### apbaxel
-
-_(Many sys interface paths has been taken from his [UKM-Project](https://github.com/apbaxel/UKM))_
-
-#### Brandon Valosek
-
-* [CpuSpyApp](https://github.com/Grarak/KernelAdiutor/blob/master/app/src/main/java/com/bvalosek/cpuspy/CpuSpyApp.java)
-* [CpuStateMonitor](https://github.com/Grarak/KernelAdiutor/blob/master/app/src/main/java/com/bvalosek/cpuspy/CpuStateMonitor.java)
-* [OverallFragment](https://github.com/Grarak/KernelAdiutor/blob/master/app/src/main/java/com/grarak/kerneladiutor/fragments/statistics/OverallFragment.java)
+Android Studio (any recent version): open the project, let gradle sync,
+Build → APK. JDK 11+ required. No special flavors.
 
 ## License
 
-    Copyright (C) 2015-2016 Willi Ye <williye97@gmail.com>
-    Copyright (C) 2017 morogoku <morogoku@hotmail.com>
-    Copyright (C) 2019 corsicanu <corsicanu22@gmail.com>
-    Copyright (C) 2019 nalas <pn2604@gmail.com>
-    Copyright (C) 2023 xxmustafacooTR <mustafa.gokmen2004@gmail.com>
-	
-    
-    xxTR Manager is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-    
-    xxTR Manager is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-    
-    You should have received a copy of the GNU General Public License
-    along with xxTR Manager.  If not, see <http://www.gnu.org/licenses/>.
+GPL-3.0 — same as every ancestor in the tree. See LICENSE (from the base
+repo, unchanged).
