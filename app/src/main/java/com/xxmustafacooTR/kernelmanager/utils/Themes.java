@@ -66,7 +66,8 @@ public class Themes {
     private static final String DEFAULT_THEME = "dynamic_main;dynamic_secondary";
 
     public static boolean isDarkTheme(Context context) {
-        if (Prefs.getBoolean(DARK_THEME_PREF_KEY, false, context))
+        // AMOLED: dark (true-black) theme is the first-launch default
+        if (Prefs.getBoolean(DARK_THEME_PREF_KEY, true, context))
             return true;
 
         if (Prefs.getBoolean(AUTO_THEME_PREF_KEY, false, context)) {

@@ -79,6 +79,8 @@ import com.xxmustafacooTR.kernelmanager.fragments.kernel.LEDFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.LMKFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.PowerFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.WakelockFragment;
+import com.xxmustafacooTR.kernelmanager.fragments.kernel.DisplayFragment;
+import com.xxmustafacooTR.kernelmanager.fragments.kernel.FlashControlFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.MiscFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.ScreenFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.kernel.SoundFragment;
@@ -106,6 +108,8 @@ import com.xxmustafacooTR.kernelmanager.utils.AppSettings;
 import com.xxmustafacooTR.kernelmanager.utils.Device;
 import com.xxmustafacooTR.kernelmanager.utils.Utils;
 import com.xxmustafacooTR.kernelmanager.utils.kernel.battery.Battery;
+import com.xxmustafacooTR.kernelmanager.utils.kernel.display.Display;
+import com.xxmustafacooTR.kernelmanager.utils.kernel.flashcontrol.FlashControl;
 import com.xxmustafacooTR.kernelmanager.utils.kernel.bus.VoltageCam;
 import com.xxmustafacooTR.kernelmanager.utils.kernel.bus.VoltageDisp;
 import com.xxmustafacooTR.kernelmanager.utils.kernel.bus.VoltageInt;
@@ -276,6 +280,12 @@ public class NavigationActivity extends BaseActivity
         }
         if (GPU.supported()) {
             mFragments.add(new NavigationActivity.NavigationFragment(R.string.gpu, GPUFragment.class, R.drawable.ic_gpu));
+        }
+        if (Display.getInstance().supported()) {
+            mFragments.add(new NavigationActivity.NavigationFragment(R.string.display_title, DisplayFragment.class, R.drawable.ic_display));
+        }
+        if (FlashControl.getInstance().supported()) {
+            mFragments.add(new NavigationActivity.NavigationFragment(R.string.flashcontrol_title, FlashControlFragment.class, R.drawable.ic_bolt));
         }
         if (GameControl.supported()) {
             mFragments.add(new NavigationActivity.NavigationFragment(R.string.game_nav, GameFragment.class, R.drawable.ic_spectrum_game));

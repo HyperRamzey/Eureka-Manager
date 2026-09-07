@@ -21,7 +21,7 @@
 	<color name="colorThundeRA">#9c9d1f</color>
 
     <color name="rcBackground_light">#dcdcdc</color>
-    <color name="rcBackground_dark">#616161</color>
+    <color name="rcBackground_dark">#000000</color>
 
 	<color name="dynamic_main">#03a9f4</color>
     <color name="dynamic_secondary">#292529</color>

@@ -1,7 +1,7 @@
-﻿<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name">xxTR Manager</string>
 
-    <string name="checking_info">Checking infoâ€¦</string>
+    <string name="checking_info">Checking info…</string>
     <string name="checking_root">Checking root access</string>
     <string name="searching_busybox">Searching for busybox</string>
     <string name="collecting_info">Collecting info</string>
@@ -62,12 +62,44 @@
 
     <!-- Units -->
     <string name="mhz">MHz</string>
-    <string name="celsius">ÂºC</string>
-    <string name="fahrenheit">ÂºF</string>
+    <string name="celsius">°C</string>
+    <string name="display_title">Display Control</string>
+    <string name="display_desc">Backlight and display color control interface for the Samsung mDNIE driver. These features are hardware (kernel) based, not software emulated. You cannot use all those features together.</string>
+    <string name="display_backlight_title">Backlight and Blue Light Control</string>
+    <string name="bklctrl_title">Backlight control</string>
+    <string name="bklctrl_desc">Extra dim backlight brightness. Adjust the brightness slider to update minimum brightness</string>
+    <string name="nmsw_title">Blue light filter</string>
+    <string name="nmsw_desc">Reduce eye strain by limiting the amount of blue light emitted by the screen.</string>
+    <string name="nightmodeintensity_title">Blue light filter opacity</string>
+    <string name="nightmodeintensity_desc">Adapt for your eyes.</string>
+    <string name="accessibilitymode_title">Color Inversion Mode</string>
+    <string name="accessibilitymode_desc">Adjust the colour settings of your display to match your dull life.</string>
+    <string name="colourlens_title">Colour Lens</string>
+    <string name="colourlenstoggle_title">Colour lens</string>
+    <string name="colourlenstoggle_desc">Customize your display with a colour filter to improve rendering of a specific colour.</string>
+    <string name="colourlenscolour_title">Colour filter</string>
+    <string name="colourlenscolour_desc">Choose your favourite colour.</string>
+    <string name="colourlenscolourint_title">Colour lens filter opacity</string>
+    <string name="colourlenscolourint_desc">Adapt for your eyes.</string>
+    <string name="screenmode_title">Screen Mode</string>
+    <string name="screenmode_desc">Some preset to vary the saturation of your display.</string>
+    <string name="screenmodetest_title">Preview Screen Modes</string>
+    <string name="screenmodetest_desc">3 secs preview for each mode.</string>
+    <string name="screenmodetest_current">Current mode:</string>
+    <string name="whitebalance_title">White balance</string>
+    <string name="whitebalance_desc">Choose from a cool to warm tint. (Adaptive display only)</string>    <string name="flashcontrol_title">FlashLight Control</string>
+    <string name="flashcontrol_desc">Control the flashlight (torch) brightness level of the rear camera flash.</string>
+    <string name="flashcontrol_lvl">Torch brightness level</string>
+    <string name="flashcontrol_lvl_summary">Set the flashlight brightness from 1 (dim) to 10 (max)</string>
+    <string name="flashcontrol_oneui_title">Flash Brightness Controller</string>
+    <string name="flashcontrol_oneui_desc">This switch controls which controller owns the flashlight brightness: OneUI has its own flashlight control settings, so only one way can exist at once.</string>
+    <string name="flashcontrol_custom_title">Use Eureka Controller</string>
+    <string name="flashcontrol_custom_desc">Disable stock behavior. The flash brightness level will be controlled by the Eureka Controller; the OneUI controller will not work. Current setting is %1$s</string>
+    <string name="fahrenheit">°F</string>
     <string name="mb">MB</string>
     <string name="ms">ms</string>
     <string name="mv">mV</string>
-    <string name="uv">ÂµV</string>
+    <string name="uv">µV</string>
     <string name="min">min</string>
     <string name="mah">mAh</string>
     <string name="ma">mA</string>
@@ -242,7 +274,7 @@
     <string name="touch_boost_summary">This will boost your minimum CPU speed if you touch the screen or press a button.</string>
     <string name="fingerprint_boost">Fingerprint Boost</string>
     <string name="fingerprint_boost_summary">This will boost your minimum CPU speed if you touch the fingerprint (HOME) button.</string>
-    <string name="big_cores_max_title">Allow 4 Cores to mÃ¡x freq.</string>
+    <string name="big_cores_max_title">Allow 4 Cores to max freq.</string>
     <string name="big_cores_max_summary">Allows the 4 BIG Cores to go to the maximum frequency, increases the performance, but will consume more battery.</string>
     <string name="iib_enabled">CPU Input Boost</string>
     <string name="iib_duration_ms">CPU Input Boost Duration ms</string>
@@ -608,7 +640,7 @@
     <string name="gpu_throttling">GPU Thermal Control</string>
     <string name="gpu_throttling_summary">In this section can control GPU temperature throttle mechanism at your OWN RISK!</string>
     <string name="gpu_tmu">GPU Thermal Manager</string>
-    <string name="gpu_tmu_summary">Your own risk to disableâ€¦</string>
+    <string name="gpu_tmu_summary">Your own risk to disable…</string>
     <string name="gpu_throttling1">GPU LEVEL 1 Throttling Freq</string>
     <string name="gpu_throttling1_summary">Exynos TMU control decrease GPU freq from max DVFS step to this freq for GPU temp - 1st step</string>
     <string name="gpu_throttling2">GPU LEVEL 2 Throttling Freq</string>
@@ -1146,7 +1178,7 @@
     <string name="adb_secure_off">Insecure ADB</string>
     <string name="debug_on">Debuggable</string>
     <string name="debug_off">Not Debuggable</string>
-    <string name="restart_usb_toast">Restarting USBâ€¦</string>
+    <string name="restart_usb_toast">Restarting USB…</string>
     <string name="selinux">SELinux State</string>
     <string name="selinux_no_kernel_toast">SELinux state: Kernel not supported</string>
     <string name="selinux_summary">Select the SELinux state, Permissive/Enforcing.\n(Required a kernel with support.)</string>

@@ -565,7 +565,8 @@ public class GPUFreqExynos {
     }
 
     public int getCurVolt() {
-        return Utils.strToInt(refactor(Utils.readFile(CUR_VOLT)));
+        // /sys/.../mali/vol reports µV (e.g. 1093750); convert to mV for display
+        return Utils.strToInt(refactor(Utils.readFile(CUR_VOLT))) / 1000;
     }
 
     public boolean hasCurVolt() {

@@ -958,7 +958,7 @@ public class GPUFragment extends RecyclerViewFragment {
             } catch (Exception e){
                 maxVolt = Utils.strToFloat("800000");
             }
-            mCurVolt.setText(volt / mGPUFreqExynos.getCurVoltOffset() + getString(R.string.mv));
+            mCurVolt.setText(volt / 1000 + getString(R.string.mv));
             float per = (float) volt / maxVolt * 100f;
             mCurVolt.addPercentage(Math.round(per > 100 ? 100 : per < 0 ? 0 : per));
         }

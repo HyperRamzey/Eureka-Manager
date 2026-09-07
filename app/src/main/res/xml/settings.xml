@@ -37,6 +37,7 @@
             android:summary="@string/auto_theme" />
         <SwitchPreferenceCompat
             android:key="darktheme"
+            android:defaultValue="true"
             android:summary="@string/dark_theme" />
         <SwitchPreferenceCompat
             android:key="forceenglish"
