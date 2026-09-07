@@ -14,7 +14,7 @@ package com.xxmustafacooTR.kernelmanager.utils.kernel.asvmargin;
 import android.content.Context;
 
 import com.xxmustafacooTR.kernelmanager.fragments.ApplyOnBootFragment;
-import com.xxmustafooTR.kernelmanager.utils.Utils;
+import com.xxmustafacooTR.kernelmanager.utils.Utils;
 import com.xxmustafacooTR.kernelmanager.utils.root.Control;
 
 import java.util.ArrayList;
@@ -66,8 +66,8 @@ public class AsvMargin {
     }
 
     public static void setValue(String path, int value, Context context) {
-        Control.runCommand(String.valueOf(value), path,
-                ApplyOnBootFragment.class, context);
+        Control.runSetting(Control.write(String.valueOf(value), path),
+                ApplyOnBootFragment.CPU, path, context);
     }
 
     /** Restore a domain to stock ECT voltages. */

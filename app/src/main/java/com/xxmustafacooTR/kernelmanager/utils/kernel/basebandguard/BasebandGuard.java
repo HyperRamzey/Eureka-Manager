@@ -59,8 +59,8 @@ public class BasebandGuard {
     }
 
     public static void setEnabled(boolean enabled, Context context) {
-        Control.runCommand(enabled ? "1" : "0", ENABLE,
-                ApplyOnBootFragment.class, context);
+        Control.runSetting(Control.write(enabled ? "1" : "0", ENABLE),
+                ApplyOnBootFragment.MISC, ENABLE, context);
     }
 
     public static boolean isRebootOnDead() {
@@ -68,7 +68,7 @@ public class BasebandGuard {
     }
 
     public static void setRebootOnDead(boolean enabled, Context context) {
-        Control.runCommand(enabled ? "1" : "0", REBOOT_ON_DEAD,
-                ApplyOnBootFragment.class, context);
+        Control.runSetting(Control.write(enabled ? "1" : "0", REBOOT_ON_DEAD),
+                ApplyOnBootFragment.MISC, REBOOT_ON_DEAD, context);
     }
 }

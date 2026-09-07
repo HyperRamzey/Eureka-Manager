@@ -12,3 +12,8 @@ theme_generator
 /app/build
 .gradle/buildOutputCleanup
 .idea/workspace.xml
+eureka-manager.keystore
+*.apk
+*.apk.idsig
+hs_err_pid*.log
+replay_pid*.log

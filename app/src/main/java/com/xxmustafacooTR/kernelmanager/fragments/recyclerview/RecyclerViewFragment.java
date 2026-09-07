@@ -74,7 +74,7 @@ import java.util.Objects;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import io.codetail.animation.ViewAnimationUtils;
+import android.view.ViewAnimationUtils;
 
 /**
  * Created by willi on 16.04.16.

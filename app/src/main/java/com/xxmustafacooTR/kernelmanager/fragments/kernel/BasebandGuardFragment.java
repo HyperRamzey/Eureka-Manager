@@ -11,6 +11,7 @@
 package com.xxmustafacooTR.kernelmanager.fragments.kernel;
 
 import com.xxmustafacooTR.kernelmanager.R;
+import com.xxmustafacooTR.kernelmanager.fragments.DescriptionFragment;
 import com.xxmustafacooTR.kernelmanager.fragments.recyclerview.RecyclerViewFragment;
 import com.xxmustafacooTR.kernelmanager.utils.Utils;
 import com.xxmustafacooTR.kernelmanager.utils.kernel.basebandguard.BasebandGuard;

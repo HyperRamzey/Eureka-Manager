@@ -44,7 +44,7 @@ import com.xxmustafacooTR.kernelmanager.views.dialog.Dialog;
 import java.io.IOException;
 import java.io.InputStream;
 
-import io.codetail.animation.ViewAnimationUtils;
+import android.view.ViewAnimationUtils;
 
 /**
  * Created by willi on 28.12.15.
